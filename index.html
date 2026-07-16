@@ -1000,8 +1000,13 @@
     <p style="color:var(--gray-300); line-height:1.8; margin-bottom:1.5rem;">A home services contracting business had years of pricing history locked inside Estimate Rocket — a CRM/estimating platform with no public API and no export option. Every past proposal existed only as an individually rendered PDF, so there was no way to search, filter, or compare what had been charged for similar work before. Rather than opening over a thousand client records by hand, I built an automated pipeline in n8n to handle it end to end.</p>
 
     <div style="margin-bottom:1.5rem;">
-      <img src="n8n%20v2.png" alt="n8n automation workflow for Estimate Rocket data extraction" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
-      <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">The actual n8n workflow: from client sheet, through PDF extraction and parsing, to a structured Google Sheet.</p>
+      <img src="n8n.png" alt="n8n scraper workflow pulling proposal PDFs from Estimate Rocket" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
+      <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">Phase 1 — the scraper workflow: client sheet → project pages → proposal PDFs, downloaded straight into Google Drive.</p>
+    </div>
+
+    <div style="margin-bottom:1.5rem;">
+      <img src="n8n%20v2.png" alt="n8n workflow parsing PDF text into structured knowledge base rows" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
+      <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">Phase 2 — the parsing workflow: reading each downloaded PDF, extracting line items, and writing structured rows into the knowledge base.</p>
     </div>
 
     <div class="case-results">

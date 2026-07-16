@@ -446,6 +446,89 @@
     font-size: 0.95rem;
   }
 
+  /* ── CASE STUDY: PIPELINE STAGES (new, matches existing tokens) ── */
+  .stage-list {
+    display: flex; flex-direction: column; gap: 0;
+    margin: 1.5rem 0 2rem;
+    border-left: 2px solid rgba(59,130,246,0.25);
+    padding-left: 0;
+  }
+
+  .stage-row {
+    position: relative;
+    padding: 0 0 1.4rem 1.6rem;
+  }
+
+  .stage-row:last-child { padding-bottom: 0; }
+
+  .stage-row::before {
+    content: '';
+    position: absolute;
+    left: -6.5px; top: 4px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--navy-mid);
+    border: 2px solid var(--blue-bright);
+  }
+
+  .stage-row .stage-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--blue-bright); margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .stage-row h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700;
+    margin-bottom: 0.4rem; color: var(--white);
+  }
+
+  .stage-row p {
+    font-size: 0.88rem; color: var(--gray-400); line-height: 1.6;
+    margin: 0;
+  }
+
+  .stage-row ul {
+    margin: 0.4rem 0 0; padding-left: 1.1rem;
+    font-size: 0.88rem; color: var(--gray-400); line-height: 1.6;
+  }
+
+  .stage-row li { margin-bottom: 0.3rem; }
+
+  .challenge-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; margin: 1.5rem 0 2rem;
+  }
+
+  .challenge-card {
+    background: rgba(37,99,235,0.05);
+    border: 1px solid rgba(59,130,246,0.15);
+    border-left: 3px solid var(--blue-bright);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.3rem;
+  }
+
+  .challenge-card h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.92rem; font-weight: 700;
+    margin-bottom: 0.4rem; color: var(--white);
+  }
+
+  .challenge-card p {
+    font-size: 0.83rem; color: var(--gray-400); line-height: 1.6; margin: 0;
+  }
+
+  .case-eyebrow-label {
+    color: var(--gray-400); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.6rem;
+  }
+
+  .subsection-label {
+    color: var(--blue-bright); font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; margin: 2rem 0 0.6rem;
+  }
+
   /* ── SPECIAL OFFER ── */
   .offer-card {
     background: linear-gradient(135deg, var(--navy-card) 0%, rgba(37,99,235,0.1) 100%);
@@ -698,6 +781,7 @@
     .pain-grid { grid-template-columns: 1fr; }
     .case-results { grid-template-columns: 1fr; }
     .deliverables { grid-template-columns: 1fr; }
+    .challenge-grid { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .footer-inner { grid-template-columns: 1fr; text-align: center; }
@@ -908,15 +992,15 @@
   </div>
 
   <div class="case-study-card" style="margin-top:2.5rem;">
-    <p style="color:var(--gray-400); font-size:0.75rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:0.6rem;">n8n Data Automation</p>
-    <h3 style="font-family:'Playfair Display', serif; font-size:1.4rem; font-weight:800; margin-bottom:1rem;">1,394 Manual Records, Automated in Hours</h3>
-    <p style="color:var(--gray-300); line-height:1.8; margin-bottom:1.5rem;">A client using Estimate Rocket needed pricing data and proposal PDFs pulled from over a thousand client records, but the platform had no export option and no public API — only a Zapier integration that didn't cover this use case. Rather than opening each record by hand, I built an automated workflow in n8n to handle it end to end.</p>
+    <p class="case-eyebrow-label">n8n Data Automation</p>
+    <h3 style="font-family:'Playfair Display', serif; font-size:1.4rem; font-weight:800; margin-bottom:1rem;">Automated Historical Data Pipeline & Knowledge Base</h3>
+    <p style="color:var(--gray-300); line-height:1.8; margin-bottom:1.5rem;">A home services contracting business had years of pricing history locked inside Estimate Rocket — a CRM/estimating platform with no public API and no export option. Every past proposal existed only as an individually rendered PDF, so there was no way to search, filter, or compare what had been charged for similar work before. Rather than opening over a thousand client records by hand, I built an automated pipeline in n8n to handle it end to end.</p>
 
-   <div style="margin-bottom:1.5rem;">
-  <img src="n8n.png" alt="n8n automation workflow for Estimate Rocket data extraction" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
-  <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">The actual n8n workflow: 9 steps from client sheet to organized Google Drive folder.</p>
-</div>
-   
+    <div style="margin-bottom:1.5rem;">
+      <img src="n8n%20v2.png" alt="n8n automation workflow for Estimate Rocket data extraction" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
+      <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">The actual n8n workflow: from client sheet, through PDF extraction and parsing, to a structured Google Sheet.</p>
+    </div>
+
     <div class="case-results">
       <div class="result-item">
         <div class="result-num">1,394</div>
@@ -932,16 +1016,69 @@
       </div>
     </div>
 
+    <p class="subsection-label">The approach</p>
+    <p style="color:var(--gray-400); font-size:0.9rem; margin-bottom:0.5rem; line-height:1.7;">With no official API to work from, the platform's data structure had to be mapped by hand before any automation could run:</p>
+    <div class="stage-list">
+      <div class="stage-row">
+        <div class="stage-tag">Mapping</div>
+        <h4>Client → Project → Proposal</h4>
+        <p>Mapped the relationship between client records, projects, and saved proposals by inspecting the app's rendered HTML and network requests.</p>
+      </div>
+      <div class="stage-row">
+        <div class="stage-tag">Access</div>
+        <h4>Two authentication paths, not one</h4>
+        <ul>
+          <li>Found a public, unauthenticated customer-portal URL pattern that served the actual proposal PDFs directly — no need to scrape behind a login for document retrieval.</li>
+          <li>Authenticated the read-side scraping (client/project pages) using a captured browser session token, since no API keys or OAuth flow existed.</li>
+        </ul>
+      </div>
+      <div class="stage-row">
+        <div class="stage-tag">Extraction</div>
+        <h4>3,325 PDFs, downloaded automatically</h4>
+        <p>Automated traversal from client → project → proposal, pulling every proposal PDF into Google Drive without a single manual download.</p>
+      </div>
+      <div class="stage-row">
+        <div class="stage-tag">Parsing</div>
+        <h4>Custom regex parser for unstructured text</h4>
+        <p>PDF text extraction doesn't preserve the original table layout, so a custom JavaScript parser was built to pull each line item — description, unit price, quantity, and total — directly out of the raw extracted text.</p>
+      </div>
+      <div class="stage-row">
+        <div class="stage-tag">Clean, Scalable Writes</div>
+        <h4>Batches that fail safely and re-run</h4>
+        <p>Processing ran in chunks of 50 records to stay within the automation platform's execution and memory limits, using an idempotent "append-or-update" write pattern so any batch could be safely re-run without creating duplicates.</p>
+      </div>
+    </div>
+
+    <p class="subsection-label">Key challenges solved</p>
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <h5>No public API</h5>
+        <p>Built the entire pipeline against a platform never designed for programmatic access, using session-based requests and careful mapping of internal ID relationships.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Sandboxed execution environment</h5>
+        <p>The automation platform didn't support common HTML-parsing libraries, so hand-written regex parsers stood in as a substitute.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Execution limits at scale</h5>
+        <p>Full-dataset runs initially failed on memory and timeout limits, so the pipeline was redesigned around small, resumable batches instead.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Data integrity at scale</h5>
+        <p>Caught and fixed a parsing bug where quantities were misread from adjacent dollar amounts — an error that would have silently corrupted a large share of the dataset if it had gone unnoticed.</p>
+      </div>
+    </div>
+
     <p style="color:var(--gray-400); font-size:0.85rem; margin-bottom:1rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;">What we built:</p>
     <div class="deliverables">
       <div class="deliverable"><span>✅</span> Automated login and page navigation per client record</div>
       <div class="deliverable"><span>✅</span> Extracted full pricing breakdowns (item, price, qty, date)</div>
       <div class="deliverable"><span>✅</span> Auto-downloaded proposal PDFs into Google Drive</div>
-      <div class="deliverable"><span>✅</span> Batched processing to handle scale reliably</div>
+      <div class="deliverable"><span>✅</span> Batched, idempotent processing to handle scale reliably</div>
     </div>
 
     <div class="case-quote">
-      "What would've taken weeks of manual copy-paste took 6 hours, fully automated."
+      "What would've taken weeks of manual copy-paste took 6 hours, fully automated — and left the business with a searchable pricing reference they'll use on every future estimate."
     </div>
 
     <div style="text-align:center; margin-top:2rem;">

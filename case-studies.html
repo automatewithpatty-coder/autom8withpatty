@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies | Automate with Patty</title>
+<meta name="description" content="Real automation builds: CRM migrations, workflow automation, and custom n8n data pipelines delivered for service businesses.">
+<link rel="icon" type="image/png" href="Rev%20Logo_Autom8.png">
+<link rel="shortcut icon" type="image/png" href="Rev%20Logo_Autom8.png">
+<link rel="apple-touch-icon" href="Rev%20Logo_Autom8.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Satoshi', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+    --navy: #0A0F1E;
+    --navy-mid: #111827;
+    --navy-card: #161D2F;
+    --blue: #2563EB;
+    --blue-bright: #3B82F6;
+    --blue-glow: rgba(37,99,235,0.15);
+    --teal: #0EA5E9;
+    --white: #FFFFFF;
+    --gray-100: #F1F5F9;
+    --gray-300: #CBD5E1;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --accent: #F59E0B;
+    --green: #10B981;
+    --red: #EF4444;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Satoshi', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 5%;
+    background: rgba(10,15,30,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 800;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    display: flex; align-items: center;
+  }
+
+  .nav-logo img {
+    height: 40px; width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--gray-300); text-decoration: none;
+    font-size: 0.9rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a.active { color: var(--blue-bright); }
+
+  .nav-cta {
+    background: var(--blue); color: var(--white) !important;
+    padding: 0.5rem 1.2rem; border-radius: 8px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--blue-bright) !important; color: var(--white) !important; }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 9rem 5% 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 500px;
+    background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .section-label {
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--blue-bright); margin-bottom: 1rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-weight: 800; letter-spacing: -1.5px;
+    margin-bottom: 1rem;
+  }
+
+  .page-header p {
+    color: var(--gray-400); font-size: 1.05rem;
+    max-width: 560px; margin: 0 auto; line-height: 1.7;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 3rem 5% 6rem; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.9rem 2rem; border-radius: var(--radius);
+    font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; transition: all 0.2s;
+    cursor: pointer; border: none;
+  }
+
+  .btn-primary {
+    background: var(--blue); color: var(--white);
+    box-shadow: 0 4px 24px rgba(37,99,235,0.4);
+  }
+
+  .btn-primary:hover {
+    background: var(--blue-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(37,99,235,0.5);
+  }
+
+  /* ── CASE STUDY ── */
+  .case-study-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius-lg);
+    padding: 3rem; max-width: 900px; margin: 0 auto;
+    position: relative; overflow: hidden;
+  }
+
+  .case-study-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--teal), var(--green));
+  }
+
+  .case-results {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin: 2rem 0;
+  }
+
+  .result-item {
+    text-align: center; padding: 1.5rem;
+    background: rgba(37,99,235,0.08);
+    border: 1px solid rgba(59,130,246,0.15);
+    border-radius: var(--radius);
+  }
+
+  .result-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 800;
+    color: var(--blue-bright);
+  }
+
+  .result-label {
+    font-size: 0.78rem; color: var(--gray-400);
+    margin-top: 0.3rem;
+  }
+
+  .deliverables {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.6rem; margin: 1.5rem 0;
+  }
+
+  .deliverable {
+    display: flex; gap: 0.6rem; align-items: center;
+    font-size: 0.88rem; color: var(--gray-300);
+  }
+
+  .deliverable span:first-child { color: var(--green); }
+
+  .case-quote {
+    margin-top: 2rem; padding: 1.5rem;
+    background: rgba(37,99,235,0.06);
+    border-left: 3px solid var(--blue-bright);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-style: italic; color: var(--gray-300);
+    font-size: 0.95rem;
+  }
+
+  .case-eyebrow-label {
+    color: var(--gray-400); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.6rem;
+  }
+
+  .subsection-label {
+    color: var(--blue-bright); font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; margin: 2rem 0 0.6rem;
+  }
+
+  /* ── pipeline stage timeline ── */
+  .stage-list {
+    display: flex; flex-direction: column; gap: 0;
+    margin: 1.5rem 0 2rem;
+    border-left: 2px solid rgba(59,130,246,0.25);
+    padding-left: 0;
+  }
+
+  .stage-row {
+    position: relative;
+    padding: 0 0 1.4rem 1.6rem;
+  }
+
+  .stage-row:last-child { padding-bottom: 0; }
+
+  .stage-row::before {
+    content: '';
+    position: absolute;
+    left: -6.5px; top: 4px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--navy-mid);
+    border: 2px solid var(--blue-bright);
+  }
+
+  .stage-row .stage-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--blue-bright); margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .stage-row h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700;
+    margin-bottom: 0.4rem; color: var(--white);
+  }
+
+  .stage-row p {
+    font-size: 0.88rem; color: var(--gray-400); line-height: 1.6;
+    margin: 0;
+  }
+
+  .stage-row ul {
+    margin: 0.4rem 0 0; padding-left: 1.1rem;
+    font-size: 0.88rem; color: var(--gray-400); line-height: 1.6;
+  }
+
+  .stage-row li { margin-bottom: 0.3rem; }
+
+  /* ── challenge cards ── */
+  .challenge-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; margin: 1.5rem 0 2rem;
+  }
+
+  .challenge-card {
+    background: rgba(37,99,235,0.05);
+    border: 1px solid rgba(59,130,246,0.15);
+    border-left: 3px solid var(--blue-bright);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.3rem;
+  }
+
+  .challenge-card h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.92rem; font-weight: 700;
+    margin-bottom: 0.4rem; color: var(--white);
+  }
+
+  .challenge-card p {
+    font-size: 0.83rem; color: var(--gray-400); line-height: 1.6; margin: 0;
+  }
+
+  .case-divider {
+    max-width: 900px; margin: 3rem auto; height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* ── FINAL CTA ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy-mid) 0%, rgba(37,99,235,0.08) 100%);
+    text-align: center;
+  }
+
+  .cta-box { max-width: 600px; margin: 0 auto; }
+
+  .cta-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; letter-spacing: -1px;
+    margin-bottom: 1rem;
+  }
+
+  .cta-box p {
+    color: var(--gray-400); margin-bottom: 2rem;
+    font-size: 1rem; line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 3rem 5%;
+  }
+
+  .footer-inner {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem; align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-tagline { font-size: 0.8rem; color: var(--gray-500); }
+
+  .footer-links {
+    display: flex; flex-direction: column; gap: 0.5rem;
+    align-items: center;
+  }
+
+  .footer-links a {
+    color: var(--gray-400); text-decoration: none;
+    font-size: 0.85rem; transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-social {
+    display: flex; gap: 1rem; justify-content: flex-end;
+    align-items: center;
+  }
+
+  .social-icon {
+    width: 38px; height: 38px;
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 1rem;
+    transition: all 0.2s;
+  }
+
+  .social-icon:hover {
+    border-color: var(--blue-bright);
+    background: var(--blue-glow);
+    transform: translateY(-2px);
+  }
+
+  .footer-bottom {
+    margin-top: 2rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center; font-size: 0.78rem;
+    color: var(--gray-500);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem; }
+    .nav-links { display: none; }
+    .case-results { grid-template-columns: 1fr; }
+    .deliverables { grid-template-columns: 1fr; }
+    .challenge-grid { grid-template-columns: 1fr; }
+    .case-study-card { padding: 2rem 1.5rem; }
+    .footer-inner { grid-template-columns: 1fr; text-align: center; }
+    .footer-social { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="Rev%20Logo_Autom8.png" alt="Automate with Patty" style="height:44px; width:auto; filter:invert(1);"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="case-studies.html" class="active">Case Studies</a></li>
+    <li><a href="index.html#special-offer">Special Offer</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="https://calendly.com/automatewithpatty/30min" target="_blank" class="nav-cta">Book a Call</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="section-label">Portfolio</div>
+  <h1>Real Builds. Real Results.</h1>
+  <p>A closer look at the CRM migrations and automation pipelines I've delivered — what the business needed, how I built it, and what changed.</p>
+</div>
+
+<!-- CASE STUDIES -->
+<section>
+
+  <div class="case-study-card">
+    <p class="case-eyebrow-label">Success Story · CRM Migration</p>
+    <h2 style="font-family:'Playfair Display', serif; font-size:1.6rem; font-weight:800; margin-bottom:1.2rem;">From Chaos to Fully Automated — In Under 4 Weeks</h2>
+    <p style="color:var(--gray-300); line-height:1.8; margin-bottom:1.5rem;">A general contracting company in Texas was managing leads manually across multiple platforms — contacts scattered, follow-ups missed, and their team had no unified system to track jobs from inquiry to close. They came to me with Follow Up Boss as their CRM and a growing team that needed something better.</p>
+
+    <div class="case-results">
+      <div class="result-item">
+        <div class="result-num">11</div>
+        <div class="result-label">Pipeline stages built</div>
+      </div>
+      <div class="result-item">
+        <div class="result-num">4 wks</div>
+        <div class="result-label">From start to fully live</div>
+      </div>
+      <div class="result-item">
+        <div class="result-num">100%</div>
+        <div class="result-label">Zero downtime migration</div>
+      </div>
+    </div>
+
+    <p style="color:var(--gray-400); font-size:0.85rem; margin-bottom:1rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;">What we built together:</p>
+    <div class="deliverables">
+      <div class="deliverable"><span>✅</span> Full CRM migration Follow Up Boss → GHL</div>
+      <div class="deliverable"><span>✅</span> 11-stage pipeline around their sales process</div>
+      <div class="deliverable"><span>✅</span> Automated SMS + email follow-up sequences</div>
+      <div class="deliverable"><span>✅</span> A2P 10DLC compliance — approved & operational</div>
+      <div class="deliverable"><span>✅</span> Thumbtack + Zapier for automatic lead capture</div>
+      <div class="deliverable"><span>✅</span> Individual user accounts + call routing</div>
+      <div class="deliverable"><span>✅</span> Full team training + Loom video library</div>
+      <div class="deliverable"><span>✅</span> Complete handoff documentation</div>
+    </div>
+
+    <div class="case-quote">
+      "This is the standard I bring to every project. Zero downtime. Fully documented. Your team owns it completely."
+    </div>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="https://calendly.com/automatewithpatty/30min" target="_blank" class="btn btn-primary">Want Results Like This? Let's Talk</a>
+    </div>
+  </div>
+
+  <div class="case-divider"></div>
+
+  <div class="case-study-card">
+    <p class="case-eyebrow-label">n8n Data Automation</p>
+    <h2 style="font-family:'Playfair Display', serif; font-size:1.6rem; font-weight:800; margin-bottom:1.2rem;">Automated Historical Data Pipeline & Knowledge Base</h2>
+    <p style="color:var(--gray-300); line-height:1.8; margin-bottom:1.5rem;">A home services contracting business had years of pricing history locked inside Estimate Rocket — a CRM/estimating platform with no public API and no export option. Every past proposal existed only as an individually rendered PDF, so there was no way to search, filter, or compare what had been charged for similar work before. Rather than opening over a thousand client records by hand, I built an automated pipeline in n8n to handle it end to end.</p>
+
+    <div style="margin-bottom:1.5rem;">
+      <img src="n8n.png" alt="n8n scraper workflow pulling proposal PDFs from Estimate Rocket" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
+      <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">Phase 1 — the scraper workflow: client sheet → project pages → proposal PDFs, downloaded straight into Google Drive.</p>
+    </div>
+
+    <div style="margin-bottom:1.5rem;">
+      <img src="n8n%20v2.png" alt="n8n workflow parsing PDF text into structured knowledge base rows" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
+      <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">Phase 2 — the parsing workflow: reading each downloaded PDF, extracting line items, and writing structured rows into the knowledge base.</p>
+    </div>
+
+    <div class="case-results">
+      <div class="result-item">
+        <div class="result-num">1,394</div>
+        <div class="result-label">Client records processed</div>
+      </div>
+      <div class="result-item">
+        <div class="result-num">3,325</div>
+        <div class="result-label">PDF proposals downloaded</div>
+      </div>
+      <div class="result-item">
+        <div class="result-num">6 hrs</div>
+        <div class="result-label">Total runtime</div>
+      </div>
+    </div>
+
+    <p class="subsection-label">The approach</p>
+    <p style="color:var(--gray-400); font-size:0.9rem; margin-bottom:0.5rem; line-height:1.7;">With no official API to work from, the platform's data structure had to be mapped by hand before any automation could run:</p>
+    <div class="stage-list">
+      <div class="stage-row">
+        <div class="stage-tag">Mapping</div>
+        <h4>Client → Project → Proposal</h4>
+        <p>Mapped the relationship between client records, projects, and saved proposals by inspecting the app's rendered HTML and network requests.</p>
+      </div>
+      <div class="stage-row">
+        <div class="stage-tag">Access</div>
+        <h4>Two authentication paths, not one</h4>
+        <ul>
+          <li>Found a public, unauthenticated customer-portal URL pattern that served the actual proposal PDFs directly — no need to scrape behind a login for document retrieval.</li>
+          <li>Authenticated the read-side scraping (client/project pages) using a captured browser session token, since no API keys or OAuth flow existed.</li>
+        </ul>
+      </div>
+      <div class="stage-row">
+        <div class="stage-tag">Extraction</div>
+        <h4>3,325 PDFs, downloaded automatically</h4>
+        <p>Automated traversal from client → project → proposal, pulling every proposal PDF into Google Drive without a single manual download.</p>
+      </div>
+      <div class="stage-row">
+        <div class="stage-tag">Parsing</div>
+        <h4>Custom regex parser for unstructured text</h4>
+        <p>PDF text extraction doesn't preserve the original table layout, so a custom JavaScript parser was built to pull each line item — description, unit price, quantity, and total — directly out of the raw extracted text.</p>
+      </div>
+      <div class="stage-row">
+        <div class="stage-tag">Clean, Scalable Writes</div>
+        <h4>Batches that fail safely and re-run</h4>
+        <p>Processing ran in chunks of 50 records to stay within the automation platform's execution and memory limits, using an idempotent "append-or-update" write pattern so any batch could be safely re-run without creating duplicates.</p>
+      </div>
+    </div>
+
+    <p class="subsection-label">Key challenges solved</p>
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <h5>No public API</h5>
+        <p>Built the entire pipeline against a platform never designed for programmatic access, using session-based requests and careful mapping of internal ID relationships.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Sandboxed execution environment</h5>
+        <p>The automation platform didn't support common HTML-parsing libraries, so hand-written regex parsers stood in as a substitute.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Execution limits at scale</h5>
+        <p>Full-dataset runs initially failed on memory and timeout limits, so the pipeline was redesigned around small, resumable batches instead.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Data integrity at scale</h5>
+        <p>Caught and fixed a parsing bug where quantities were misread from adjacent dollar amounts — an error that would have silently corrupted a large share of the dataset if it had gone unnoticed.</p>
+      </div>
+    </div>
+
+    <p style="color:var(--gray-400); font-size:0.85rem; margin-bottom:1rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;">What we built:</p>
+    <div class="deliverables">
+      <div class="deliverable"><span>✅</span> Automated login and page navigation per client record</div>
+      <div class="deliverable"><span>✅</span> Extracted full pricing breakdowns (item, price, qty, date)</div>
+      <div class="deliverable"><span>✅</span> Auto-downloaded proposal PDFs into Google Drive</div>
+      <div class="deliverable"><span>✅</span> Batched, idempotent processing to handle scale reliably</div>
+    </div>
+
+    <div class="case-quote">
+      "What would've taken weeks of manual copy-paste took 6 hours, fully automated — and left the business with a searchable pricing reference they'll use on every future estimate."
+    </div>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="https://calendly.com/automatewithpatty/30min" target="_blank" class="btn btn-primary">Want Results Like This? Let's Talk</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-box">
+    <div class="section-label" style="text-align:center;">Ready?</div>
+    <h2>Ready to Build Something Like This?</h2>
+    <p>Let's talk. Book a free 30-minute discovery call and let's map out exactly what your business needs. No pressure. No obligation. Just a real conversation.</p>
+    <a href="https://calendly.com/automatewithpatty/30min" target="_blank" class="btn btn-primary" style="font-size:1rem; padding:1rem 2.5rem;">📅 Let's Talk — Book Your Free Call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><img src="Rev%20Logo_Autom8.png" alt="Automate with Patty" style="height:52px; width:auto; filter:invert(1);"></div>
+      <div class="footer-tagline">GHL Specialist & Automation Consultant</div>
+      <div style="margin-top:0.5rem; font-size:0.78rem; color:var(--gray-500);">autom8withpatty.online</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:automatewithpatty@gmail.com?subject=I want to automate!">automatewithpatty@gmail.com</a>
+      <a href="https://wa.me/639765707467" target="_blank">💬 WhatsApp: +63 976 570 7467</a>
+      <a href="https://calendly.com/automatewithpatty/30min" target="_blank">📅 Book a Free Call</a>
+    </div>
+    <div class="footer-social">
+      <a href="mailto:automatewithpatty@gmail.com" class="social-icon" title="Email">✉️</a>
+      <a href="https://wa.me/639765707467" target="_blank" class="social-icon" title="WhatsApp">💬</a>
+      <a href="http://www.instagram.com/clarapat_autom8" target="_blank" class="social-icon" title="Instagram">📸</a>
+      <a href="https://www.youtube.com/@clarapat_autom8" target="_blank" class="social-icon" title="YouTube">▶️</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Automate with Patty. All rights reserved. · autom8withpatty.online
+  </div>
+</footer>
+
+</body>
+</html>

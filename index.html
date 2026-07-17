@@ -799,7 +799,7 @@
   <a href="#" class="nav-logo"><img src="Rev%20Logo_Autom8.png" alt="Automate with Patty" style="height:44px; width:auto; filter:invert(1);"></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#case-study">Case Study</a></li>
+    <li><a href="case-studies.html">Case Studies</a></li>
     <li><a href="#special-offer">Special Offer</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#about">About</a></li>
@@ -952,148 +952,12 @@
 <!-- CASE STUDY -->
 <section class="case-study-bg" id="case-study">
   <div class="section-header" style="text-align:center;">
-    <div class="section-label">Success Story</div>
-    <h2 class="section-title">From Chaos to Fully Automated<br>— In Under 4 Weeks</h2>
+    <div class="section-label">Success Stories</div>
+    <h2 class="section-title">Real Builds. Real Results.</h2>
+    <p class="section-sub" style="margin:0 auto;">From CRM migrations to custom data pipelines — see how it's worked for other businesses.</p>
   </div>
-  <div class="case-study-card">
-    <p style="color:var(--gray-300); line-height:1.8; margin-bottom:1.5rem;">A general contracting company in Texas was managing leads manually across multiple platforms — contacts scattered, follow-ups missed, and their team had no unified system to track jobs from inquiry to close. They came to me with Follow Up Boss as their CRM and a growing team that needed something better.</p>
-
-    <div class="case-results">
-      <div class="result-item">
-        <div class="result-num">11</div>
-        <div class="result-label">Pipeline stages built</div>
-      </div>
-      <div class="result-item">
-        <div class="result-num">4 wks</div>
-        <div class="result-label">From start to fully live</div>
-      </div>
-      <div class="result-item">
-        <div class="result-num">100%</div>
-        <div class="result-label">Zero downtime migration</div>
-      </div>
-    </div>
-
-    <p style="color:var(--gray-400); font-size:0.85rem; margin-bottom:1rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;">What we built together:</p>
-    <div class="deliverables">
-      <div class="deliverable"><span>✅</span> Full CRM migration Follow Up Boss → GHL</div>
-      <div class="deliverable"><span>✅</span> 11-stage pipeline around their sales process</div>
-      <div class="deliverable"><span>✅</span> Automated SMS + email follow-up sequences</div>
-      <div class="deliverable"><span>✅</span> A2P 10DLC compliance — approved & operational</div>
-      <div class="deliverable"><span>✅</span> Thumbtack + Zapier for automatic lead capture</div>
-      <div class="deliverable"><span>✅</span> Individual user accounts + call routing</div>
-      <div class="deliverable"><span>✅</span> Full team training + Loom video library</div>
-      <div class="deliverable"><span>✅</span> Complete handoff documentation</div>
-    </div>
-
-    <div class="case-quote">
-      "This is the standard I bring to every project. Zero downtime. Fully documented. Your team owns it completely."
-    </div>
-
-    <div style="text-align:center; margin-top:2rem;">
-      <a href="https://calendly.com/automatewithpatty/30min" target="_blank" class="btn btn-primary">Want Results Like This? Let's Talk</a>
-    </div>
-  </div>
-
-  <div class="case-study-card" style="margin-top:2.5rem;">
-    <p class="case-eyebrow-label">n8n Data Automation</p>
-    <h3 style="font-family:'Playfair Display', serif; font-size:1.4rem; font-weight:800; margin-bottom:1rem;">Automated Historical Data Pipeline & Knowledge Base</h3>
-    <p style="color:var(--gray-300); line-height:1.8; margin-bottom:1.5rem;">A home services contracting business had years of pricing history locked inside Estimate Rocket — a CRM/estimating platform with no public API and no export option. Every past proposal existed only as an individually rendered PDF, so there was no way to search, filter, or compare what had been charged for similar work before. Rather than opening over a thousand client records by hand, I built an automated pipeline in n8n to handle it end to end.</p>
-
-    <div style="margin-bottom:1.5rem;">
-      <img src="n8n.png" alt="n8n scraper workflow pulling proposal PDFs from Estimate Rocket" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
-      <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">Phase 1 — the scraper workflow: client sheet → project pages → proposal PDFs, downloaded straight into Google Drive.</p>
-    </div>
-
-    <div style="margin-bottom:1.5rem;">
-      <img src="n8n%20v2.png" alt="n8n workflow parsing PDF text into structured knowledge base rows" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
-      <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">Phase 2 — the parsing workflow: reading each downloaded PDF, extracting line items, and writing structured rows into the knowledge base.</p>
-    </div>
-
-    <div class="case-results">
-      <div class="result-item">
-        <div class="result-num">1,394</div>
-        <div class="result-label">Client records processed</div>
-      </div>
-      <div class="result-item">
-        <div class="result-num">3,325</div>
-        <div class="result-label">PDF proposals downloaded</div>
-      </div>
-      <div class="result-item">
-        <div class="result-num">15 hrs</div>
-        <div class="result-label">Total runtime</div>
-      </div>
-    </div>
-
-    <p class="subsection-label">The approach</p>
-    <p style="color:var(--gray-400); font-size:0.9rem; margin-bottom:0.5rem; line-height:1.7;">With no official API to work from, the platform's data structure had to be mapped by hand before any automation could run:</p>
-    <div class="stage-list">
-      <div class="stage-row">
-        <div class="stage-tag">Mapping</div>
-        <h4>Client → Project → Proposal</h4>
-        <p>Mapped the relationship between client records, projects, and saved proposals by inspecting the app's rendered HTML and network requests.</p>
-      </div>
-      <div class="stage-row">
-        <div class="stage-tag">Access</div>
-        <h4>Two authentication paths, not one</h4>
-        <ul>
-          <li>Found a public, unauthenticated customer-portal URL pattern that served the actual proposal PDFs directly — no need to scrape behind a login for document retrieval.</li>
-          <li>Authenticated the read-side scraping (client/project pages) using a captured browser session token, since no API keys or OAuth flow existed.</li>
-        </ul>
-      </div>
-      <div class="stage-row">
-        <div class="stage-tag">Extraction</div>
-        <h4>3,325 PDFs, downloaded automatically</h4>
-        <p>Automated traversal from client → project → proposal, pulling every proposal PDF into Google Drive without a single manual download.</p>
-      </div>
-      <div class="stage-row">
-        <div class="stage-tag">Parsing</div>
-        <h4>Custom regex parser for unstructured text</h4>
-        <p>PDF text extraction doesn't preserve the original table layout, so a custom JavaScript parser was built to pull each line item — description, unit price, quantity, and total — directly out of the raw extracted text.</p>
-      </div>
-      <div class="stage-row">
-        <div class="stage-tag">Clean, Scalable Writes</div>
-        <h4>Batches that fail safely and re-run</h4>
-        <p>Processing ran in chunks of 50 records to stay within the automation platform's execution and memory limits, using an idempotent "append-or-update" write pattern so any batch could be safely re-run without creating duplicates.</p>
-      </div>
-    </div>
-
-    <p class="subsection-label">Key challenges solved</p>
-    <div class="challenge-grid">
-      <div class="challenge-card">
-        <h5>No public API</h5>
-        <p>Built the entire pipeline against a platform never designed for programmatic access, using session-based requests and careful mapping of internal ID relationships.</p>
-      </div>
-      <div class="challenge-card">
-        <h5>Sandboxed execution environment</h5>
-        <p>The automation platform didn't support common HTML-parsing libraries, so hand-written regex parsers stood in as a substitute.</p>
-      </div>
-      <div class="challenge-card">
-        <h5>Execution limits at scale</h5>
-        <p>Full-dataset runs initially failed on memory and timeout limits, so the pipeline was redesigned around small, resumable batches instead.</p>
-      </div>
-      <div class="challenge-card">
-        <h5>Data integrity at scale</h5>
-        <p>Caught and fixed a parsing bug where quantities were misread from adjacent dollar amounts — an error that would have silently corrupted a large share of the dataset if it had gone unnoticed.</p>
-      </div>
-    </div>
-
-    <p style="color:var(--gray-400); font-size:0.85rem; margin-bottom:1rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;">What we built:</p>
-    <div class="deliverables">
-      <div class="deliverable"><span>✅</span> Automated login and page navigation per client record</div>
-      <div class="deliverable"><span>✅</span> Extracted full pricing breakdowns (item, price, qty, date)</div>
-      <div class="deliverable"><span>✅</span> Auto-downloaded proposal PDFs into Google Drive</div>
-      <div class="deliverable"><span>✅</span> Batched, idempotent processing to handle scale reliably</div>
-    </div>
-
-    <div class="case-quote">
-      "What would've taken weeks of manual copy-paste took 6
-     
-     hours, fully automated — and left the business with a searchable pricing reference they'll use on every future estimate."
-    </div>
-
-    <div style="text-align:center; margin-top:2rem;">
-      <a href="https://calendly.com/automatewithpatty/30min" target="_blank" class="btn btn-primary">Want Results Like This? Let's Talk</a>
-    </div>
+  <div style="text-align:center;">
+    <a href="case-studies.html" class="btn btn-primary">View Case Studies →</a>
   </div>
 </section>
 
@@ -1193,7 +1057,6 @@
         <span class="stack-tag">Workflow Automation</span>
         <span class="stack-tag">Google Workspace</span>
         <span class="stack-tag">Webhooks</span>
-        <span class="stack-tag">n8n</span>
       </div>
       <a href="https://calendly.com/automatewithpatty/30min" target="_blank" class="btn btn-primary">Book Your Free Discovery Call</a>
     </div>

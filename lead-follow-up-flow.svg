@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 424" role="img" aria-labelledby="t d">
+  <title id="t">14-day lead follow-up workflow</title>
+  <desc id="d">A new lead is assigned, tagged and moved to Contact Attempted. Over 14 days the lead receives 9 call tasks, 5 texts and 4 emails, daily for the first four days and then every other day. Leads who never reply move to a nurture stage.</desc>
+  <style>
+    text { font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .day { font-size: 14px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
+    .chip-label { font-size: 13px; font-weight: 600; text-anchor: middle; }
+    .call rect { fill: #DBEAFE; stroke: #2563EB; }
+    .call text { fill: #1D4ED8; }
+    .sms rect { fill: #E0F2FE; stroke: #0EA5E9; }
+    .sms text { fill: #0369A1; }
+    .mail rect { fill: #D1FAE5; stroke: #10B981; }
+    .mail text { fill: #047857; }
+    .chip rect { stroke-width: 1.5; }
+  </style>
+
+  <rect x="0.75" y="0.75" width="798.5" height="422.5" rx="16" fill="#F8FAFF" stroke="#DBEAFE" stroke-width="1.5"/>
+
+  <!-- Trigger + setup -->
+  <rect x="20" y="16" width="760" height="52" rx="12" fill="#2563EB"/>
+  <text x="400" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">New lead enters the pipeline</text>
+  <text x="400" y="57" text-anchor="middle" font-size="13" fill="#DBEAFE">Auto-assigned  ·  tagged  ·  moved to "Contact Attempted"  ·  cleared from other workflows</text>
+
+  <!-- arrow from trigger to Day 1 -->
+  <line x1="60" y1="68" x2="60" y2="94" stroke="#2563EB" stroke-width="2"/>
+  <path d="M54 90 L60 100 L66 90 Z" fill="#2563EB"/>
+
+  <!-- timeline axis -->
+  <line x1="60" y1="130" x2="700" y2="130" stroke="#93C5FD" stroke-width="2"/>
+  <g fill="#2563EB">
+    <circle cx="60" cy="130" r="5"/><circle cx="140" cy="130" r="5"/><circle cx="220" cy="130" r="5"/>
+    <circle cx="300" cy="130" r="5"/><circle cx="380" cy="130" r="5"/><circle cx="460" cy="130" r="5"/>
+    <circle cx="540" cy="130" r="5"/><circle cx="620" cy="130" r="5"/><circle cx="700" cy="130" r="5"/>
+  </g>
+
+  <!-- day labels -->
+  <text class="day" x="60" y="118">Day 1</text>
+  <text class="day" x="140" y="118">Day 2</text>
+  <text class="day" x="220" y="118">Day 3</text>
+  <text class="day" x="300" y="118">Day 4</text>
+  <text class="day" x="380" y="118">Day 6</text>
+  <text class="day" x="460" y="118">Day 8</text>
+  <text class="day" x="540" y="118">Day 10</text>
+  <text class="day" x="620" y="118">Day 12</text>
+  <text class="day" x="700" y="118">Day 14</text>
+
+  <!-- Day 1 -->
+  <g class="chip call"><rect x="24" y="160" width="72" height="30" rx="8"/><text class="chip-label" x="60" y="180">Call</text></g>
+  <g class="chip sms"><rect x="24" y="198" width="72" height="30" rx="8"/><text class="chip-label" x="60" y="218">Text</text></g>
+  <g class="chip mail"><rect x="24" y="236" width="72" height="30" rx="8"/><text class="chip-label" x="60" y="256">Email</text></g>
+  <g class="chip call"><rect x="24" y="274" width="72" height="30" rx="8"/><text class="chip-label" x="60" y="294">Call</text></g>
+
+  <!-- Day 2 -->
+  <g class="chip call"><rect x="104" y="160" width="72" height="30" rx="8"/><text class="chip-label" x="140" y="180">Call</text></g>
+  <g class="chip sms"><rect x="104" y="198" width="72" height="30" rx="8"/><text class="chip-label" x="140" y="218">Text</text></g>
+
+  <!-- Day 3 -->
+  <g class="chip mail"><rect x="184" y="160" width="72" height="30" rx="8"/><text class="chip-label" x="220" y="180">Email</text></g>
+  <g class="chip call"><rect x="184" y="198" width="72" height="30" rx="8"/><text class="chip-label" x="220" y="218">Call</text></g>
+
+  <!-- Day 4 -->
+  <g class="chip call"><rect x="264" y="160" width="72" height="30" rx="8"/><text class="chip-label" x="300" y="180">Call</text></g>
+  <g class="chip sms"><rect x="264" y="198" width="72" height="30" rx="8"/><text class="chip-label" x="300" y="218">Text</text></g>
+
+  <!-- Day 6 -->
+  <g class="chip call"><rect x="344" y="160" width="72" height="30" rx="8"/><text class="chip-label" x="380" y="180">Call</text></g>
+  <g class="chip sms"><rect x="344" y="198" width="72" height="30" rx="8"/><text class="chip-label" x="380" y="218">Text</text></g>
+  <g class="chip mail"><rect x="344" y="236" width="72" height="30" rx="8"/><text class="chip-label" x="380" y="256">Email</text></g>
+
+  <!-- Day 8 -->
+  <g class="chip call"><rect x="424" y="160" width="72" height="30" rx="8"/><text class="chip-label" x="460" y="180">Call</text></g>
+
+  <!-- Day 10 -->
+  <g class="chip call"><rect x="504" y="160" width="72" height="30" rx="8"/><text class="chip-label" x="540" y="180">Call</text></g>
+  <g class="chip sms"><rect x="504" y="198" width="72" height="30" rx="8"/><text class="chip-label" x="540" y="218">Text</text></g>
+
+  <!-- Day 12 -->
+  <g class="chip call"><rect x="584" y="160" width="72" height="30" rx="8"/><text class="chip-label" x="620" y="180">Call</text></g>
+
+  <!-- Day 14 -->
+  <g class="chip mail"><rect x="664" y="160" width="72" height="30" rx="8"/><text class="chip-label" x="700" y="180">Final email</text></g>
+
+  <!-- legend and totals -->
+  <g class="chip call"><rect x="190" y="326" width="16" height="16" rx="4"/></g>
+  <text x="212" y="339" font-size="13" font-weight="600" fill="#0F172A">9 call tasks</text>
+  <g class="chip sms"><rect x="338" y="326" width="16" height="16" rx="4"/></g>
+  <text x="360" y="339" font-size="13" font-weight="600" fill="#0F172A">5 texts</text>
+  <g class="chip mail"><rect x="446" y="326" width="16" height="16" rx="4"/></g>
+  <text x="468" y="339" font-size="13" font-weight="600" fill="#0F172A">4 emails</text>
+
+  <!-- handoff to nurture -->
+  <line x1="700" y1="196" x2="700" y2="356" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M694 350 L700 360 L706 350 Z" fill="#F59E0B"/>
+  <rect x="20" y="362" width="760" height="44" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="400" y="389" text-anchor="middle" font-size="14" font-weight="700" fill="#92400E">No reply after Day 14? The lead moves to Lead Nurture instead of being dropped</text>
+</svg>

@@ -26,8 +26,9 @@
   <text class="ph-name" x="109" y="144">Confirm and educate</text>
   <circle class="dot" cx="38" cy="176" r="3"/><text class="item" x="50" y="180">Call task after 3 min</text>
   <circle class="dot" cx="38" cy="204" r="3"/><text class="item" x="50" y="208">Text: confirm receipt</text>
-  <circle class="dot" cx="38" cy="232" r="3"/><text class="item" x="50" y="236">Day 2: what to consider</text>
-  <circle class="dot" cx="38" cy="260" r="3"/><text class="item" x="50" y="264">Day 3: decision path</text>
+  <circle class="dot" cx="38" cy="232" r="3"/><text class="item" x="50" y="236">Email: what to consider</text>
+  <circle class="dot" cx="38" cy="260" r="3"/><text class="item" x="50" y="264">Text: Day 2 follow-up</text>
+  <circle class="dot" cx="38" cy="288" r="3"/><text class="item" x="50" y="292">Text: decision path</text>
 
   <!-- phase 2 -->
   <rect x="214" y="104" width="178" height="226" rx="12" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>

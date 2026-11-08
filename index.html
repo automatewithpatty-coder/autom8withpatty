@@ -789,6 +789,51 @@
   }
 
   /* ── MOBILE ── */
+  /* ── TOOLS I WORK WITH (floating chips) ── */
+  .tools-float {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 1.1rem 1.3rem; max-width: 900px; margin: 0 auto;
+  }
+
+  .tool-chip {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.7rem 1.2rem;
+    background: var(--navy-card);
+    border: 1px solid rgba(59,130,246,0.2);
+    border-radius: 999px;
+    color: var(--gray-300); font-size: 0.9rem; font-weight: 600;
+    animation: tool-float 6s ease-in-out infinite;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .tool-chip:hover {
+    border-color: var(--blue-bright);
+    box-shadow: 0 0 18px rgba(59,130,246,0.35);
+  }
+
+  .tool-chip img {
+    width: 20px; height: 20px; filter: invert(1) opacity(0.9);
+  }
+
+  .tool-chip.featured {
+    border-color: var(--blue-bright); color: #fff;
+    background: rgba(37,99,235,0.15);
+  }
+
+  .tool-chip:nth-child(2n)   { animation-duration: 7s;   animation-delay: -1.5s; }
+  .tool-chip:nth-child(3n)   { animation-duration: 5.5s; animation-delay: -3s; }
+  .tool-chip:nth-child(4n+1) { animation-duration: 8s;   animation-delay: -4.5s; }
+  .tool-chip:nth-child(5n)   { animation-duration: 6.5s; animation-delay: -2s; }
+
+  @keyframes tool-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tool-chip { animation: none; }
+  }
+
   @media (max-width: 768px) {
     nav { padding: 1rem; }
     .nav-links { display: none; }
@@ -964,6 +1009,34 @@
       <br>
       <a href="https://calendly.com/automatewithpatty/30min" target="_blank" class="btn btn-primary">Yes, That's Me — Let's Fix It</a>
     </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-header" style="text-align:center;">
+    <div class="section-label">My Stack</div>
+    <h2 class="section-title">Tools I Work With</h2>
+    <p class="section-sub" style="margin:0 auto;">I connect the tools you already use, so everything runs as one system.</p>
+  </div>
+  <div class="tools-float">
+    <span class="tool-chip featured">GoHighLevel</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/zapier.svg" alt="" onerror="this.remove()">Zapier</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/make.svg" alt="" onerror="this.remove()">Make</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/n8n.svg" alt="" onerror="this.remove()">n8n</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/googleappsscript.svg" alt="" onerror="this.remove()">Google Apps Script</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/googlesheets.svg" alt="" onerror="this.remove()">Google Workspace</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/openai.svg" alt="" onerror="this.remove()">ChatGPT</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg" alt="" onerror="this.remove()">Claude</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/googlegemini.svg" alt="" onerror="this.remove()">Gemini</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/slack.svg" alt="" onerror="this.remove()">Slack</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/clickup.svg" alt="" onerror="this.remove()">ClickUp</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/mondaydotcom.svg" alt="" onerror="this.remove()">Monday.com</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/quickbooks.svg" alt="" onerror="this.remove()">QuickBooks</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/zoho.svg" alt="" onerror="this.remove()">Zoho</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/mailchimp.svg" alt="" onerror="this.remove()">Mailchimp</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/canva.svg" alt="" onerror="this.remove()">Canva</span>
+    <span class="tool-chip"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/loom.svg" alt="" onerror="this.remove()">Loom</span>
   </div>
 </section>
 

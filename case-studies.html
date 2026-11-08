@@ -19,17 +19,18 @@
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Satoshi', sans-serif;
     --font-code: 'JetBrains Mono', monospace;
-    --navy: #0A0F1E;
-    --navy-mid: #111827;
-    --navy-card: #161D2F;
+    --navy: #F5F8FC;
+    --navy-mid: #EAF1FB;
+    --navy-card: #FFFFFF;
     --blue: #2563EB;
-    --blue-bright: #3B82F6;
+    --blue-bright: #1D4ED8;
     --blue-glow: rgba(37,99,235,0.15);
     --teal: #0EA5E9;
     --white: #FFFFFF;
+    --ink: #0F172A;
     --gray-100: #F1F5F9;
-    --gray-300: #CBD5E1;
-    --gray-400: #94A3B8;
+    --gray-300: #334155;
+    --gray-400: #475569;
     --gray-500: #64748B;
     --accent: #F59E0B;
     --green: #10B981;
@@ -43,7 +44,9 @@
   body {
     font-family: 'Satoshi', sans-serif;
     background: var(--navy);
-    color: var(--white);
+    background-image: radial-gradient(rgba(37,99,235,0.10) 1px, transparent 1px);
+    background-size: 26px 26px;
+    color: var(--ink);
     line-height: 1.6;
     overflow-x: hidden;
   }
@@ -53,15 +56,15 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1rem 5%;
-    background: rgba(10,15,30,0.85);
+    background: rgba(245,248,252,0.88);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(15,23,42,0.06);
   }
 
   .nav-logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem; font-weight: 800;
-    color: var(--white);
+    color: var(--ink);
     text-decoration: none;
     letter-spacing: -0.5px;
     display: flex; align-items: center;
@@ -82,7 +85,7 @@
     transition: color 0.2s;
   }
 
-  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover { color: var(--ink); }
   .nav-links a.active { color: var(--blue-bright); }
 
   .nav-cta {
@@ -153,7 +156,7 @@
   /* ── CASE STUDY ── */
   .case-study-card {
     background: var(--navy-card);
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(15,23,42,0.06);
     border-radius: var(--radius-lg);
     padding: 3rem; max-width: 900px; margin: 0 auto;
     position: relative; overflow: hidden;
@@ -254,7 +257,7 @@
   .stage-row h4 {
     font-family: 'Playfair Display', serif;
     font-size: 1rem; font-weight: 700;
-    margin-bottom: 0.4rem; color: var(--white);
+    margin-bottom: 0.4rem; color: var(--ink);
   }
 
   .stage-row p {
@@ -286,7 +289,7 @@
   .challenge-card h5 {
     font-family: 'Playfair Display', serif;
     font-size: 0.92rem; font-weight: 700;
-    margin-bottom: 0.4rem; color: var(--white);
+    margin-bottom: 0.4rem; color: var(--ink);
   }
 
   .challenge-card p {
@@ -295,7 +298,7 @@
 
   .case-divider {
     max-width: 900px; margin: 3rem auto; height: 1px;
-    background: rgba(255,255,255,0.06);
+    background: rgba(15,23,42,0.06);
   }
 
   /* ── FINAL CTA ── */
@@ -321,7 +324,7 @@
   /* ── FOOTER ── */
   footer {
     background: var(--navy-mid);
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid rgba(15,23,42,0.06);
     padding: 3rem 5%;
   }
 
@@ -348,7 +351,7 @@
     font-size: 0.85rem; transition: color 0.2s;
   }
 
-  .footer-links a:hover { color: var(--white); }
+  .footer-links a:hover { color: var(--ink); }
 
   .footer-social {
     display: flex; gap: 1rem; justify-content: flex-end;
@@ -358,7 +361,7 @@
   .social-icon {
     width: 38px; height: 38px;
     background: var(--navy-card);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(15,23,42,0.1);
     border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     text-decoration: none; font-size: 1rem;
@@ -373,7 +376,7 @@
 
   .footer-bottom {
     margin-top: 2rem; padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid rgba(15,23,42,0.06);
     text-align: center; font-size: 0.78rem;
     color: var(--gray-500);
   }
@@ -465,12 +468,12 @@
     <p style="color:var(--gray-300); line-height:1.8; margin-bottom:1.5rem;">A home services contracting business had years of pricing history locked inside Estimate Rocket — a CRM/estimating platform with no public API and no export option. Every past proposal existed only as an individually rendered PDF, so there was no way to search, filter, or compare what had been charged for similar work before. Rather than opening over a thousand client records by hand, I built an automated pipeline in n8n to handle it end to end.</p>
 
     <div style="margin-bottom:1.5rem;">
-      <img src="n8n.png" alt="n8n scraper workflow pulling proposal PDFs from Estimate Rocket" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
+      <img src="n8n.png" alt="n8n scraper workflow pulling proposal PDFs from Estimate Rocket" style="width:100%; border-radius:var(--radius); border:1px solid rgba(15,23,42,0.08); display:block;">
       <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">Phase 1 — the scraper workflow: client sheet → project pages → proposal PDFs, downloaded straight into Google Drive.</p>
     </div>
 
     <div style="margin-bottom:1.5rem;">
-      <img src="n8n%20v2.png" alt="n8n workflow parsing PDF text into structured knowledge base rows" style="width:100%; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.08); display:block;">
+      <img src="n8n%20v2.png" alt="n8n workflow parsing PDF text into structured knowledge base rows" style="width:100%; border-radius:var(--radius); border:1px solid rgba(15,23,42,0.08); display:block;">
       <p style="color:var(--gray-500); font-size:0.78rem; text-align:center; margin-top:0.6rem;">Phase 2 — the parsing workflow: reading each downloaded PDF, extracting line items, and writing structured rows into the knowledge base.</p>
     </div>
 

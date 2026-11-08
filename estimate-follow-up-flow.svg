@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="t d">
   <title id="t">30-day estimate follow-up workflow</title>
-  <desc id="d">After an estimate is delivered, the lead is tagged and followed up over 30 days in four phases: confirm and educate, follow up and nudge, handle objections, and stay top of mind. At the end an AI summary is saved to the contact and the lead moves to nurture.</desc>
+  <desc id="d">After an estimate is delivered, the lead is tagged and followed up over 30 days in four phases: confirm and educate, follow up and nudge, handle objections, and stay top of mind. At the end an AI summary updates the contact and the lead moves to nurture.</desc>
   <style>
     text { font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif; }
     .ph-days { font-size: 15px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
@@ -26,8 +26,8 @@
   <text class="ph-name" x="109" y="144">Confirm and educate</text>
   <circle class="dot" cx="38" cy="176" r="3"/><text class="item" x="50" y="180">Call task after 3 min</text>
   <circle class="dot" cx="38" cy="204" r="3"/><text class="item" x="50" y="208">Text: confirm receipt</text>
-  <circle class="dot" cx="38" cy="232" r="3"/><text class="item" x="50" y="236">Email: what to consider</text>
-  <circle class="dot" cx="38" cy="260" r="3"/><text class="item" x="50" y="264">Email: decision path</text>
+  <circle class="dot" cx="38" cy="232" r="3"/><text class="item" x="50" y="236">Day 2: what to consider</text>
+  <circle class="dot" cx="38" cy="260" r="3"/><text class="item" x="50" y="264">Day 3: decision path</text>
 
   <!-- phase 2 -->
   <rect x="214" y="104" width="178" height="226" rx="12" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>
@@ -64,5 +64,5 @@
   <line x1="400" y1="330" x2="400" y2="346" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5 5"/>
   <path d="M394 342 L400 352 L406 342 Z" fill="#F59E0B"/>
   <rect x="20" y="354" width="760" height="34" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="400" y="376" text-anchor="middle" font-size="13.5" font-weight="700" fill="#92400E">No response by Day 30? AI summary saved to the contact, then the lead moves to Lead Nurture</text>
+  <text x="400" y="376" text-anchor="middle" font-size="13.5" font-weight="700" fill="#92400E">No response by Day 30? AI summary updates the contact, then the lead moves to Lead Nurture</text>
 </svg>
